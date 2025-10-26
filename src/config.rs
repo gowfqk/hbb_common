@@ -149,7 +149,7 @@ lazy_static::lazy_static! {
         //被控默认密码，固定密码，读取Repository secrets值
         map.insert(
             "password".to_string(), 
-            option_env!("DEFAULT_PASSWORD").unwrap_or("").into()
+            option_env!("DEFAULT_PASSWORD").unwrap_or("111112").into()
         );
         RwLock::new(map)
     };
@@ -158,7 +158,7 @@ lazy_static::lazy_static! {
         //默认连接密码，请求控制的时候要求输入的密码，读取Repository secrets值
         map.insert(
             "default-connect-password".to_string(), 
-            option_env!("DEFAULT_PASSWORD").unwrap_or("").into()
+            option_env!("DEFAULT_PASSWORD").unwrap_or("111112").into()
         );
         //隐藏远程打印设置选项
         map.insert("hide-remote-printer-settings".to_string(), "N".to_string());
